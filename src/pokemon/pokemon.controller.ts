@@ -27,8 +27,9 @@ export class PokemonController {
     return this.pokemonService.update(term, updatePokemonDto);
   }
 
+  // TODO: fazer o pasrse para mongo id funcionar
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.pokemonService.remove(+id);
+    return this.pokemonService.remove(id);
   }
 }
