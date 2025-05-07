@@ -65,9 +65,11 @@ export class PokemonService {
   }
 
   async remove(id: string) {
-    
-    const pokemon = await this.findOne(id);
-    await pokemon.deleteOne();
+    //! tbm existe o deleteMany onde seria algo similar a select * from table delete
+    const result = await this.pokemonModel.deleteOne({ _id: id });
+    if( result.deletedCount === 0 ) throw new NotFoundException(`Pokemon with id ${id} not found`);
+
+    return result;
   }
 
   private handleExceptions(error: any) {
