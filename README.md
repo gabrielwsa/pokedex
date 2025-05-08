@@ -38,6 +38,31 @@ $ yarn install
 $ docker-compose up -d
 ```
 
+### Docker
+
+O projeto está configurado para ser executado em ambientes Docker, facilitando a implantação e padronização de ambientes.
+
+#### Desenvolvimento
+
+```bash
+# Iniciar somente o MongoDB
+$ docker-compose up -d
+```
+
+#### Produção
+
+```bash
+# Construir e iniciar a aplicação e MongoDB para produção
+$ docker-compose -f docker-compose.prod.yaml up -d
+```
+
+O arquivo `docker-compose.prod.yaml` configura:
+- Aplicação NestJS em container
+- MongoDB
+- Variáveis de ambiente via arquivo .env
+- Portas configuráveis
+- Restart automático
+
 ### Compilar e executar o projeto
 
 ```bash
@@ -101,6 +126,31 @@ $ yarn install
 # Iniciar la base de datos MongoDB
 $ docker-compose up -d
 ```
+
+### Docker
+
+El proyecto está configurado para ejecutarse en entornos Docker, facilitando la implementación y estandarización de entornos.
+
+#### Desarrollo
+
+```bash
+# Iniciar solo MongoDB
+$ docker-compose up -d
+```
+
+#### Producción
+
+```bash
+# Construir e iniciar la aplicación y MongoDB para producción
+$ docker-compose -f docker-compose.prod.yaml up -d
+```
+
+El archivo `docker-compose.prod.yaml` configura:
+- Aplicación NestJS en contenedor
+- MongoDB
+- Variables de entorno a través del archivo .env
+- Puertos configurables
+- Reinicio automático
 
 ### Compilar y ejecutar el proyecto
 
